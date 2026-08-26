@@ -1,0 +1,45 @@
+generated: '2026-08-26'
+method: probed
+source: live probes of the company website hosts on 2026-08-26
+note: >-
+  Every /.well-known/ path probed returned 404 on inspirna.com, the live corporate site of the
+  company formerly named Rgenix. The legacy rgenix.com host no longer serves a site (301 to
+  www.rgenix.com, which does not respond). Nothing was saved and NO WellKnown or SecurityTxt
+  pointer is emitted — this file records a verified absence, not a served surface.
+hit_count: 0
+hosts:
+- host: https://inspirna.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  soft_404_control:
+    path: /zzz-nonexistent-control
+    status: 404
+    bytes: 28772
+    note: control path returns a real 404 status, so the 404s above are genuine, not an SPA catch-all
+- host: https://rgenix.com
+  documents:
+  - path: /
+    status: 301
+    file: null
+    note: redirects to http://www.rgenix.com/, which does not respond (connection timeout); no
+      /.well-known/ probes were possible against this host

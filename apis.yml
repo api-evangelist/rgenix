@@ -1,17 +1,30 @@
 aid: rgenix
 name: Rgenix
-description: 'Rgenix is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Rgenix, Inc. is a clinical-stage biopharmaceutical company founded by scientists from
+  The Rockefeller University to discover and develop first-in-class small molecules and biologics
+  against previously undruggable drivers of cancer metastasis, using its proprietary RNA-DRIVEr
+  target-discovery platform. Its programs include ompenaclid (RGX-202), an oral SLC6A8/creatine-transporter
+  inhibitor in Phase 2 for RAS-mutant colorectal cancer, abequolixron (RGX-104), an oral LXR agonist
+  in Phase 1b/2, and RGX-019-MMAE, a MERTK-targeting antibody-drug conjugate. The company changed its
+  corporate name from Rgenix to Inspirna in September 2021 and operates from Long Island City, New York.
+  It is a therapeutics developer with no public API, developer program, or machine-readable interface.'
 url: https://raw.githubusercontent.com/api-evangelist/rgenix/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-harvest-source-url: https://forgeglobal.com/rgenix_stock/
+x-former-name: Rgenix, Inc.
+x-current-name: Inspirna, Inc.
 specificationVersion: '0.20'
 created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Biotechnology
+- Pharmaceuticals
+- Oncology
+- Drug Discovery
+- Clinical Trials
+- Life Sciences
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +32,33 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/rgenix-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/rgenix_stock/
+  url: https://inspirna.com/
+- type: PrivacyPolicy
+  url: https://inspirna.com/privacy-policy/
+- type: TermsOfService
+  url: https://inspirna.com/terms-of-use/
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: Rgenix is a clinical-stage oncology drug developer that renamed itself Inspirna in
+    September 2021; rgenix.com now 301s to an unresponsive www.rgenix.com, and the live corporate
+    site inspirna.com is a WordPress marketing site (company/science/pipeline/patients/careers/news)
+    with no developer section, no GitHub organization, and a 404 on every contract-discovery path.
+  evidence:
+  - url: https://inspirna.com/openapi.json
+    status: 404
+  - url: https://inspirna.com/.well-known/agent-card.json
+    status: 404
+  - url: https://api.github.com/orgs/inspirna
+    status: 404
+  - url: http://rgenix.com/
+    status: 301
+  checked: '2026-08-26'
